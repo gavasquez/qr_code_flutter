@@ -34,12 +34,10 @@ class _HomePageBody extends StatelessWidget {
   Widget build(BuildContext context) {
     // obtener el selected menu opt
     final uiProvider = Provider.of<UiProvider>(context);
-
     // TODO: temporal leer la base de datos
     /* final tempScan = new ScanModel(valor: 'http://google.com'); */
     /* DBProvider.db.nuevoScan(tempScan); */
     /* DBProvider.db.deleteScanAll().then((value) => print(value));  */
-
     // cambiar para mostrar la pagina respectiva
     final curretntIndex = uiProvider.selectdMenuOpt;
     switch (curretntIndex) {
