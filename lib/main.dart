@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:qr_code/pages/home_page.dart';
 import 'package:qr_code/pages/mapa_page.dart';
+import 'package:qr_code/providers/scan_list_provider.dart';
 import 'package:qr_code/providers/ui_provider.dart';
 
 void main() {
@@ -15,7 +16,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     /* ponemos todo en el MultiProvider para poner los providers */
     return MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) => new UiProvider())],
+      providers: [
+        ChangeNotifierProvider(create: (_) => new UiProvider()),
+        ChangeNotifierProvider(create: (_) => new ScanListProvider())
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'QR Code',

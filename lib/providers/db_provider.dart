@@ -76,7 +76,6 @@ class DBProvider {
   Future<List<ScanModel>?> getTodosLosScans() async {
     final db = await database;
     final res = await db.query('Scans');
-
     return res.isNotEmpty ? res.map((s) => ScanModel.fromJson(s)).toList() : [];
   }
 
@@ -103,6 +102,7 @@ class DBProvider {
     final res = await db.delete('Scans', where: 'id = ?', whereArgs: [id]);
     return res;
   }
+
   // borrar todos los scans
   Future<int> deleteScanAll() async {
     final db = await database;
